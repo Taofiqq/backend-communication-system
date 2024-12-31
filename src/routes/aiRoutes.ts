@@ -1,5 +1,5 @@
 import express from "express";
-import { handleUserQuery } from "@controllers/aiController";
+import { handleUserQuery } from "../controllers/aiController";
 
 const router = express.Router();
 

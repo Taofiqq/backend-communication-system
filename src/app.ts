@@ -1,10 +1,10 @@
 import express from "express";
 import cors from "cors";
 import dotenv from "dotenv";
-import pool from "@config/database";
-import authRoutes from "@routes/authRoute";
-import accountRoutes from "@routes/accountRoutes";
-import aiRoutes from "@routes/aiRoutes";
+import pool from "./config/database";
+import authRoutes from "./routes/authRoute";
+import accountRoutes from "./routes/accountRoutes";
+import aiRoutes from "./routes/aiRoutes";
 
 dotenv.config();
 

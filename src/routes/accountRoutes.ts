@@ -1,11 +1,11 @@
 import express from "express";
-import { authenticate } from "@middlewares/authMiddleware";
+import { authenticate } from "../middlewares/authMiddleware";
 import {
   getAccounts,
   getTransactions,
   //   createTransaction,
   transferFunds,
-} from "@controllers/accountController";
+} from "../controllers/accountController";
 
 const router = express.Router();
 

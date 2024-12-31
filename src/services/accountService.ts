@@ -1,4 +1,4 @@
-import pool from "@config/database";
+import pool from "../config/database";
 
 export const fetchAccounts = async (userId: number) => {
   const query = `

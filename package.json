@@ -3,6 +3,8 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
+    "build": "tsc",
+    "start": "node -r tsconfig-paths/register dist/app.js",
     "test": "echo \"Error: no test specified\" && exit 1",
     "dev": "nodemon --legacy-watch './src' --ext 'ts,json' --exec 'ts-node -r tsconfig-paths/register src/app.ts'",
     "seed": "ts-node -r tsconfig-paths/register src/utils/seedData.ts"

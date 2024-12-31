@@ -1,5 +1,5 @@
-import openai from "@config/openai";
-import { categorizeUserIntent } from "@utils/categories";
+import openai from "../config/openai";
+import { categorizeUserIntent } from "../utils/categories";
 
 export const generateAIResponse = async (userQuery: string) => {
   const intent = categorizeUserIntent(userQuery);

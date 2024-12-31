@@ -4,7 +4,7 @@ import {
   fetchTransactions,
   createNewTransaction,
   transferBetweenAccounts,
-} from "@services/accountService";
+} from "../services/accountService";
 
 export const getAccounts = async (req: Request, res: Response) => {
   const userId = (req as any).user.userId;

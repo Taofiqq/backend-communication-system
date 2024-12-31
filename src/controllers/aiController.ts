@@ -1,6 +1,5 @@
 import { Request, Response } from "express";
-import { generateAIResponse } from "@services/aiService";
-
+import { generateAIResponse } from "../services/aiService";
 export const handleUserQuery = async (
   req: Request,
   res: Response
