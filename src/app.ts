@@ -35,14 +35,22 @@ app.get("/health", (req, res) => {
 });
 
 app.get("/test-db", async (req, res) => {
+  let client;
   try {
-    const result = await pool.query("SELECT NOW()");
-    res
-      .status(200)
-      .json({ message: "Database connected!", time: result.rows[0].now });
-  } catch (error) {
-    console.error(error);
-    res.status(500).json({ error: "Database connection failed" });
+    client = await pool.connect();
+    const result = await client.query("SELECT NOW()");
+    res.status(200).json({
+      message: "Database connected!",
+      time: result.rows[0].now,
+    });
+  } catch (error: any) {
+    console.error("Database connection error:", error);
+    res.status(500).json({
+      error: "Database connection failed",
+      details: error.message,
+    });
+  } finally {
+    if (client) client.release();
   }
 });
 
