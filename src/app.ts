@@ -9,7 +9,8 @@ import aiRoutes from "./routes/aiRoutes";
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
+const PORT = parseInt(process.env.PORT || "3000", 10);
+const HOST = "0.0.0.0";
 
 app.use(
   (
@@ -45,6 +46,6 @@ app.get("/test-db", async (req, res) => {
   }
 });
 
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
+app.listen(PORT, HOST, () => {
+  console.log(`Server is up and running on ${PORT}`);
 });
